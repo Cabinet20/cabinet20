@@ -57,7 +57,9 @@
         "styles": [
           "app/shell/src/styles.scss"
         ],
-        "scripts": []
+        "scripts": [
+          "node_modules/bootstrap/dist/js/bootstrap.js"
+        ]
       },
       "configurations": {
         "production": {
