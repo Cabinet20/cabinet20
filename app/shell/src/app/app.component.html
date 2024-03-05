@@ -1,0 +1,12 @@
+<div class="d-flex flex-column">
+    <div class="">
+        <h1>Shell</h1>
+        <p>{{ username() }}</p>
+    </div>
+    <div class="flex-1">
+        <a [routerLink]="['']">Home</a> |
+        <a [routerLink]="['run']">Running</a> |
+        <a [routerLink]="['auth']">User</a>
+        <router-outlet></router-outlet>
+    </div>
+</div>
