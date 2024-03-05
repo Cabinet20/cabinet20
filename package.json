@@ -6,10 +6,12 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "serve:all": "nx run shell:serve && nx run auth:serve && nx run running:serve",
     "serve:shell": "nx run shell:serve",
     "serve:auth": "nx run auth:serve",
-    "serve:running": "nx run running:serve"
+    "serve:running": "nx run running:serve",
+    "build:shell": "nx run shell:build",
+    "build:auth": "nx run auth:build",
+    "build:running": "nx run running:build"
   },
   "private": true,
   "dependencies": {
