@@ -14,7 +14,7 @@
                         <a class="nav-link" routerLinkActive="active" [routerLink]="['run']">Running</a>
                     </li>
                     <li class="d-flex nav-item">
-                        <a class="nav-link" routerLinkActive="active" [routerLink]="['auth']">Login</a>
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['auth']">User{{ isLoggedIn() ? ' (' + username() + ')' : '' }}</a>
                     </li>
                 </ul>
             </div>

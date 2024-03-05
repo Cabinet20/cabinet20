@@ -4,5 +4,8 @@ import { appRoutes } from './app.routes';
 import {AuthStore} from "@cabinet20/shared/data-access";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(appRoutes), AuthStore],
+  providers: [
+    provideRouter(appRoutes), 
+    AuthStore
+  ],
 };

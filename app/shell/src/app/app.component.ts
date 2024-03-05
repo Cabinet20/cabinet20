@@ -12,8 +12,8 @@ import {AuthStore} from "@cabinet20/shared/data-access";
 })
 export class AppComponent {
   auth = inject(AuthStore);
-  
   username = this.auth.username;
+  isLoggedIn = this.auth.isAuthenticated;
   
   title = 'shell';
 }
