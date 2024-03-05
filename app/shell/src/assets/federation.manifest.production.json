@@ -1,0 +1,4 @@
+{
+	"running": "https://cabinet20-running.vercel.app/remoteEntry.json",
+	"auth": "https://cabinet20-auth.vercel.app/remoteEntry.json"
+}
