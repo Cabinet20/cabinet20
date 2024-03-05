@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, effect, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormBuilder, FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
 import {AuthStore} from "@cabinet20/shared/data-access";
@@ -13,6 +13,8 @@ import {AuthStore} from "@cabinet20/shared/data-access";
 export class LoginComponent {
   fb = inject(FormBuilder);
   auth = inject(AuthStore);
+  isLoggedIn = this.auth.isAuthenticated;
+  username = this.auth.username;
 
   loginForm = this.fb.group({
                               username: new FormControl('', {validators: [Validators.required]}),
@@ -20,10 +22,18 @@ export class LoginComponent {
                             });
 
   constructor() {
-    this.loginForm.valueChanges.subscribe(output => console.log(output))
+    effect(() => {
+      console.log('Username: ', this.username!())
+    });
   }
   
   login() {
-    this.auth.setLoggedIn();
+    const newUser = this.loginForm.get('username') ? this.loginForm.get('username')!.value! : 'No user';
+    this.auth.login(newUser);
+    this.loginForm.reset();
+  }
+  
+  logout() {
+    this.auth.logout();
   }
 }
