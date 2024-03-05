@@ -75,7 +75,13 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "fileReplacements": [
+            {
+              "replace": "app/shell/src/assets/federation.manifest.json",
+              "with": "app/shell/src/assets/federation.manifest.production.json"
+            }
+          ]
         },
         "development": {
           "optimization": false,
