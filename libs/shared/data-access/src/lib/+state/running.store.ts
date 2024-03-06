@@ -59,7 +59,7 @@ export const RunningStore = signalStore(
     updateSpeed(speed: number, speedMeasure: 'kph' | 'mph') {
       const updatedDistance = 0;
       patchState(store, () => ({
-        speed, speedMeasure
+        speed, speedMeasure, ...calcTime(speed, speedMeasure, store.distance(), store.distanceMeasure())
       }))
     },
 
