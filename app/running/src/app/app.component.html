@@ -1,2 +1,86 @@
-<p>Running MFE</p>
-<router-outlet></router-outlet>
+<div class="container">
+  <h3 class="py-8">Running calculator</h3>
+  <form [formGroup]="form">
+    <div class="row pb-8">
+      <div class="col-md-2">
+        <h5>Distance</h5>
+        <div class="input-group">
+          <input type="number"
+                 aria-label="Distance"
+                 class="form-control text-center"
+                 formControlName="distance">
+          <select class="form-select text-center"
+                  aria-label="Distance measure"
+                  formControlName="distanceMeasure">
+            <option value="km">km</option>
+            <option value="miles">miles</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <h5>Speed</h5>
+        <div class="input-group">
+          <input type="number"
+                 aria-label="Distance"
+                 class="form-control text-center"
+                 placeholder="min"
+                 formControlName="speed">
+          <select class="form-select text-center"
+                  aria-label="Distance measure"
+                  formControlName="speedMeasure">
+            <option value="kph">kph</option>
+            <option value="mph">mph</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5>Time</h5>
+        <div class="input-group">
+          <input type="number"
+                 aria-label="Distance"
+                 class="form-control text-center"
+                 placeholder="hr"
+                 formControlName="timeHours">
+          <span class="input-group-text">h</span>
+          <input type="number"
+                 aria-label="Distance"
+                 class="form-control text-center"
+                 placeholder="min"
+                 formControlName="timeMinutes">
+          <span class="input-group-text">m</span>
+          <input type="number"
+                 aria-label="Distance"
+                 class="form-control text-center"
+                 placeholder="sec"
+                 formControlName="timeSeconds">
+          <span class="input-group-text">s</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h5>Pace</h5>
+        <div class="input-group">
+          <input type="number"
+                 aria-label="Distance"
+                 class="form-control text-center"
+                 placeholder="min"
+                 formControlName="paceMinutes">
+          <span class="input-group-text">m</span>
+          <input type="number"
+                 aria-label="Distance"
+                 class="form-control text-center"
+                 placeholder="secs"
+                 formControlName="paceSeconds">
+          <span class="input-group-text">s</span>
+          <select class="form-select text-center"
+                  aria-label="Distance measure"
+                  formControlName="paceDistanceMeasure">
+            <option value="km">km</option>
+            <option value="miles">mile</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!--<router-outlet/>-->
