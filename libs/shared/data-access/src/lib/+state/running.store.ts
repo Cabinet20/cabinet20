@@ -14,7 +14,7 @@ type RunningStore = {
   speedMeasure: 'kph' | 'mph'
 }
 
-const initialState : RunningStore = {
+const initialState: RunningStore = {
   distance: 10,
   distanceMeasure: 'km',
   timeHours: 0,
@@ -28,7 +28,7 @@ const initialState : RunningStore = {
 }
 
 export const RunningStore = signalStore(
-  { providedIn: 'root'},
+  {providedIn: 'root'},
   withState(initialState),
   withComputed(store => ({
     model: computed(() => ({
@@ -47,7 +47,7 @@ export const RunningStore = signalStore(
   withMethods((store) => ({
     updateDistance(distance: number, distanceMeasure: 'km' | 'miles') {
       patchState(store, () => ({
-        distance, distanceMeasure,...calcTime(store.speed(), store.speedMeasure(), distance, distanceMeasure)
+        distance, distanceMeasure, ...calcTime(store.speed(), store.speedMeasure(), distance, distanceMeasure)
       }))
     },
     updateTime(timeHours: number, timeMinutes: number, timeSeconds: number) {
@@ -62,7 +62,7 @@ export const RunningStore = signalStore(
         speed, speedMeasure
       }))
     },
-    
+
   })),
 );
 
@@ -74,7 +74,7 @@ const calcTime = (speed: number, speedMeasure: 'kph' | 'mph', distance: number, 
   const minutes = Math.floor((time % 1) * 60);
   const seconds = Math.floor((((time % 1) * 60) % 1) * 60);
   return {
-    timeHours:hours,
+    timeHours: hours,
     timeMinutes: minutes,
     timeSeconds: seconds
   }
